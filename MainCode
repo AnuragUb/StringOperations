@@ -1,0 +1,58 @@
+def names():
+    print("What Two Names Would You Like To Be Added ?")
+    name1 = input("Enter First Name: ").lower().strip()
+    name2 = input("Enter Second Name: ").lower().strip()
+    return name1 , name2 
+
+def objective():
+    print ("What Operation Would You Like To Perform ?")
+    print ("1. Word To Numeric Conversion")
+    print ("2. Word To Letter Conversion's Total Value")
+    print ("3. Word Addition")
+    print ("4. Words As A Title ")
+    print (" ")
+    return int(input("Choose your option: "))
+
+def word_to_letter_conversion(name1, name2):
+    s = name1 + name2
+    print("The Conversion Is : ", [ord(char) - 96 for char in s])
+    print("")
+    print("")
+
+def word_to_letter_conversion_total_value(name1, name2):  
+    s = name1 + name2
+    print("The Total Addition Is : ", sum([ord(char) - 96 for char in s]))
+    print("")
+    print("")
+
+def word_addition(name1, name2):
+    s = name1 + name2
+    print("The Literal Addition Is : ", s)
+    print("")
+    print("")
+
+def word_title(name1, name2):
+    s = name1 + name2
+    print("The Title Is : ", s.title())
+    print("")
+    print("")
+
+
+def main():
+    name1, name2 = names()
+
+    while True:
+        choice = objective()
+        if choice == 1:
+            word_to_letter_conversion(name1, name2)
+        elif choice == 2:
+            word_to_letter_conversion_total_value(name1, name2)
+        elif choice == 3:
+            word_addition(name1, name2)
+        elif choice == 4:
+            word_title(name1, name2)
+        elif choice == 5:
+            print("Goodbye")
+            break
+
+main()
